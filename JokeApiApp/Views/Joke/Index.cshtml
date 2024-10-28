@@ -1,0 +1,28 @@
+﻿@model JokeApiApp.Models.Joke
+
+@{
+    ViewBag.Title = "Joke of the Day";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h2 class="text-center">Joke of the Day</h2>
+        </div>
+        <div class="card-body">
+            @if (Model.IsSetup)
+            {
+                <p class="card-text"><strong>Pregunta:</strong> @Model.Setup</p>
+                <p class="card-text"><strong>Respuesta:</strong> @Model.Delivery</p>
+            }
+            else
+            {
+                <p class="card-text">@Model.JokeText</p>
+            }
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary" onclick="location.reload()">Another Joke</button>
+        </div>
+    </div>
+</div>
+
